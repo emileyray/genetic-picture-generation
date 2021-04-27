@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="640.0" style="-fx-background-color: #2C2C2C;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Text fill="#f4f4f4" layoutX="337.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Similarity:" wrappingWidth="72.63671875" AnchorPane.leftAnchor="337.0" AnchorPane.topAnchor="42.734375">
+         <font>
+            <Font name="Microsoft YaHei Light" size="16.0" />
+         </font>
+      </Text>
+      <Text fill="#f4f4f4" layoutX="337.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generation:" wrappingWidth="90.13671875" AnchorPane.leftAnchor="337.0" AnchorPane.topAnchor="19.734375">
+         <font>
+            <Font name="Microsoft YaHei Light" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="similarityValue" fill="#f4f4f4" layoutX="602.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="RIGHT" wrappingWidth="72.63671875" AnchorPane.rightAnchor="25.36328125">
+         <font>
+            <Font name="Microsoft YaHei Light" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="generationValue" fill="#f4f4f4" layoutX="549.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="125.63671875" AnchorPane.rightAnchor="25.36328125">
+         <font>
+            <Font name="Microsoft YaHei Light" size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="uploadButton" onMouseClicked="#handleUpload" cache="true" contentDisplay="TOP" layoutX="20.0" layoutY="454.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="300.0" style="-fx-background-color: #FFFFFF10;" text="Upload a picture" textAlignment="CENTER" textFill="#f4f4f4" textOverrun="CENTER_ELLIPSIS" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="20.0">
+         <font>
+            <Font name="Microsoft JhengHei Light" size="16.0" />
+         </font>
+      </Button>
+      <Text fx:id = "okText" fill="#f4f4f4" layoutX="20.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="or" textAlignment="CENTER" wrappingWidth="300.0" AnchorPane.bottomAnchor="61.984375" AnchorPane.leftAnchor="20.0">
+         <font>
+            <Font name="Microsoft YaHei Light" size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="startButton" cache="true" contentDisplay="TOP" layoutX="337.0" layoutY="304.0" mnemonicParsing="false" onMouseClicked="#handleStart" prefHeight="34.0" prefWidth="280.0" style="-fx-background-color: #78CE6C99;" text="Start/Continue" textFill="#f4f4f4" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="337.0" AnchorPane.rightAnchor="23.0">
+         <font>
+            <Font name="Microsoft JhengHei Light" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="saveButton" onMouseClicked="#handleSaveButton" cache="true" contentDisplay="TOP" disable="true" layoutX="338.0" layoutY="454.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="280.0" style="-fx-background-color: #FFFFFF10;" text="Save the result" textFill="#f4f4f4" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="338.0" AnchorPane.rightAnchor="22.0">
+         <font>
+            <Font name="Microsoft JhengHei Light" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="pauseButton" cache="true" contentDisplay="TOP" disable="true" layoutX="337.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#handlePause" prefHeight="34.0" prefWidth="280.0" style="-fx-background-color: #80A4CD99;" text="Pause" textFill="#f4f4f4" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="337.0" AnchorPane.rightAnchor="23.0">
+         <font>
+            <Font name="Microsoft JhengHei Light" size="16.0" />
+         </font>
+      </Button>
+      <MenuButton fx:id="selectMenu" layoutX="20.0" layoutY="387.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="300.0" style="-fx-background-color: #ffffff10;" text="Select a deafault picture" textAlignment="CENTER" textFill="#f4f4f4" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="387.0">
+         <font>
+            <Font name="Microsoft JhengHei Light" size="16.0" />
+         </font>
+         <items>
+            <MenuItem onAction="#handleMonaLisa" style="-fx-background: #000000; -fx-font-size: 16; -fx-font-family: Microsoft JhengHei Light;" text="Mona Lisa" />
+            <MenuItem onAction="#handleGirl" mnemonicParsing="false" style="-fx-background: #000000; -fx-font-size: 16; -fx-font-family: Microsoft JhengHei Light;" text="Girl with a Pearl Earring" />
+            <MenuItem onAction="#handleTheStarryNight" mnemonicParsing="false" style="-fx-background: #000000; -fx-font-size: 16; -fx-font-family: Microsoft JhengHei Light;" text="The Starry Night" />
+            <MenuItem onAction="#handleTheScream" mnemonicParsing="false" style="-fx-background: #000000; -fx-font-size: 16; -fx-font-family: Microsoft JhengHei Light;" text="The Scream" />
+            <MenuItem onAction="#handleMileyCyrus" mnemonicParsing="false" style="-fx-background: #000000; -fx-font-size: 16; -fx-font-family: Microsoft JhengHei Light;" text="Miley Cyrus" />
+            <MenuItem onAction="#handleHungryCat" mnemonicParsing="false" style="-fx-background: #000000; -fx-font-size: 16; -fx-font-family: Microsoft JhengHei Light;" text="Hungry Cat" />
+         </items>
+      </MenuButton>
+      <Text fill="#f4f4f4" layoutX="337.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Population Size:" wrappingWidth="125.63671875">
+         <font>
+            <Font name="Microsoft YaHei Light" size="16.0" />
+         </font>
+      </Text>
+      <Slider fx:id="populationSlider" blockIncrement="1.0" layoutX="397.0" layoutY="121.0" majorTickUnit="10.0" max="50.0" min="10.0" minorTickCount="4" onMouseClicked="#handlePopulation" onMouseDragged="#handlePopulation" prefHeight="38.0" prefWidth="245.0" showTickLabels="true" showTickMarks="true" AnchorPane.rightAnchor="58.0" />
+      <Text fill="#f4f4f4" layoutX="337.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mutation Amount (%):" wrappingWidth="200.0">
+         <font>
+            <Font name="Microsoft YaHei Light" size="16.0" />
+         </font>
+      </Text>
+      <Slider fx:id="mutationSlider" blockIncrement="25.0" layoutX="397.0" layoutY="188.0" minorTickCount="4" onMouseClicked="#handleMutation" onMouseDragged="#handleMutation" prefHeight="38.0" prefWidth="245.0" showTickLabels="true" showTickMarks="true" AnchorPane.rightAnchor="58.0" />
+      <Text fill="#f4f4f4" layoutX="337.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mosaic Size:" wrappingWidth="200.0">
+         <font>
+            <Font name="Microsoft YaHei Light" size="16.0" />
+         </font>
+      </Text>
+      <Slider fx:id="mosaicSizeSlider" blockIncrement="2.0" layoutX="397.0" layoutY="255.0" majorTickUnit="10.0" max="30.0" min="10.0" minorTickCount="4" onMouseClicked="#handleMosaicSize" onMouseDragged="#handleMosaicSize" prefHeight="38.0" prefWidth="245.0" showTickLabels="true" showTickMarks="true" value="1.0" AnchorPane.rightAnchor="58.0" />
+      <Text fx:id="populationValue" fill="#f4f4f4" layoutX="638.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" textAlignment="RIGHT" wrappingWidth="37.63671875" AnchorPane.rightAnchor="24.36328125">
+         <font>
+            <Font name="Microsoft YaHei Light" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="mutationValue" fill="#f4f4f4" layoutX="638.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" textAlignment="RIGHT" wrappingWidth="37.63671875" AnchorPane.rightAnchor="24.36328125">
+         <font>
+            <Font name="Microsoft YaHei Light" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="mosaicSize" fill="#f4f4f4" layoutX="638.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" textAlignment="RIGHT" wrappingWidth="37.63671875" AnchorPane.rightAnchor="24.36328125">
+         <font>
+            <Font name="Microsoft YaHei Light" size="16.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="2.0" arcWidth="5.0" fill="#ffffffdd" height="300.0" layoutX="20.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="300.0" />
+      <Button fx:id="stopButton" cache="true" contentDisplay="TOP" disable="true" layoutX="339.0" layoutY="404.0" mnemonicParsing="false" onMouseClicked="#handleStop" prefHeight="34.0" prefWidth="280.0" style="-fx-background-color: #F29C9C99;" text="Stop" textFill="#f4f4f4" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Microsoft JhengHei Light" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="button128" cache="true" contentDisplay="TOP" disable="true" layoutX="20.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#handle128" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: #FFFFFF10;" text="128x128" textFill="#f4f4f4" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Microsoft JhengHei Light" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="button256" cache="true" contentDisplay="TOP" layoutX="125.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#handle256" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: #FFFFFF10;" text="256x256" textFill="#f4f4f4" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Microsoft JhengHei Light" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="button512" cache="true" contentDisplay="TOP" layoutX="230.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#handle512" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: #FFFFFF10;" text="512x512" textFill="#f4f4f4" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Microsoft JhengHei Light" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imageView" fitHeight="280.0" fitWidth="280.0" layoutX="30.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
