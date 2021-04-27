@@ -1,2 +1,2 @@
-# differential-equations
-A tool to solve a specific differential eqiation using different numeric methods
+# generic picture generations
+A tool to generate pictures using genetic algorithms
